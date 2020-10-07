@@ -1,60 +1,64 @@
 ###### tags: `UNIX`
 
-# Week4
+# Week3
 
-## chmod
+## Inode
+![](https://i.imgur.com/wExJQSL.jpg)
+### inode
+The inode (index node) is a data structure in a Unix-style file system that describes a file-system object such as a file or a directory. Each inode stores the attributes and disk block locations of the object's data. File-system object attributes may include metadata (times of last change, access, modification), as well as owner and permission data.
+### attributes
+* Device ID (this identifies the device containing the file; that is, the scope of uniqueness of the serial number).
+* File serial numbers.
+* The file mode which determines the file type and how the file's owner, its group, and others can access the file.
+* A link count telling how many hard links point to the inode.
+* The User ID of the file's owner.
+* The Group ID of the file.
+* The device ID of the file if it is a device file.
+* The size of the file in bytes.
+* Timestamps telling when the inode itself was last modified (ctime, inode change time), the file content last modified (mtime, modification time), and last accessed (atime, access time).
+* The preferred I/O block size.
+* The number of blocks allocated to this file.
+
+## Metadata
+### metadata
+Metadata is "data that provides information about other data". In other words, it is "data about data". Many distinct types of metadata exist, including descriptive metadata, structural metadata, administrative metadata, reference metadata and statistical metadata. 
+
+## Link
 ```
-chmod [options] [permissions] [filename]
+ln [OPTION]... [-T] TARGET LINK_NAME   (1st form)
+ln [OPTION]... TARGET... DIRECTORY     (2nd form)
 ```
-### Description
+**PS: LINKNAME & DIRECTORY should not exit before linking.**
 
-On Unix-like operating systems, a set of flags associated with each file determines who can access that file, and how they can access it. These flags are called file permissions or modes, as in "mode of access." The command name chmod stands for "change mode." It restricts the way a file can be accessed.
+### Function
+The ln command is used to create links between files.
 
-### Access mode codes
+### Links Types
+- Hard links: You can think a hard link as an additional name for an existing file. Hard links are associating two or more file names with the same inode . You can create one or more hard links for a single file. Hard links cannot be created for directories and files on a different filesystem or partition.
+
+- Soft links(symbolic link): A soft link is something like a shortcut in Windows. It is an indirect pointer to a file or directory. Unlike a hard link, a symbolic link can point to a file or a directory on a different filesystem or partition
 
 
-| Code | Meaning | 
-| -------- | -------- | 
-| 0 or - | The access right that is supposed to be on this place is not granted.| 
-|4 or r|read access is granted to the user category defined in this place|
-|2 or w|write permission is granted to the user category defined in this place|
-|1 or x|execute permission is granted to the user category defined in this place|
-
-### User group codes
-|Code|Meaning|
-|----|----|
-|u|user permissions|
-|g|group permissions|
-|o|permissions for others|
-
-### File protection with chmod
-|Command|Code|Meaning|
-|-------|----|------|
-|chmod 400 file	|-r--------|To protect a file against accidental overwriting.|
-|chmod 500 directory|-r-x------|	To protect yourself from accidentally removing, renaming or moving files from this directory.
-|chmod 600 file	|-rw-------|A private file only changeable by the user who entered this command.
-|chmod 644 file	|-rw-r--r--|A publicly readable file that can only be changed by the issuing user.
-|chmod 660 file|-rw-rw----|Users belonging to your group can change this file, others don't have any access to it at all.
-|chmod 700 file|-rwx------|Protects a file against any access from other users, while the issuing user still has full access.
-|chmod 755 directory	|-rwxr-xr-x|For files that should be readable and executable by others, but only changeable by the issuing user.
-|chmod 775 file	|-rwxrwxr-x|Standard file sharing mode for a group.
-|chmod 777 file	|-rwxrwxrwx|Everybody can do everything to this file.
-	
-    
-### Change file mode
-r--r-----
+## df
 ```
-chmod ug+w [FILENAME]
+df -ih
 ```
-rw-rw----
+### Real name
+Display file system,
+### Function
+Display file system and inode.
+
+
+
+## stat
 ```
-chmod o+rwx,g-w [FILENAME]
+stat [FILENAME]
 ```
-rw-r--rwx
 
-## grep
+### Real name
+status
 
-## find
-
+### Function
+Display other information.
 
 
