@@ -53,8 +53,52 @@ chmod o+rwx,g-w [FILENAME]
 rw-r--rwx
 
 ## grep
+```
+grep [OPTIONS] PATTERN [FILE...]
+```
+Description:
+       grep searches the named input FILEs for lines containing a match to the
+       given PATTERN.  If no files are specified, or if the file “-” is given,
+       grep  searches  standard  input.   By default, grep prints the matching
+       lines.
+       
+       
 
 ## find
 
+find the type of directory or file
+```
+find . -type d, f
+```
+d: directory
+f: file
+
+find the type of file nad its name is "text.txt"
+```
+find . -type f -name "test.txt"
+```
+
+find the type of file nad its name starting with "text*"
+```
+find . -type f -name "test*"
+```
 
 
+find the type of file nad its name starting with "text*" in case insensitive(sometime is low case or high case)
+```
+find . -type f -iname "test*"
+```
+
+find the file modified in more than one minute age and less than ten minutes ago
+```
+find . -type f -mmin +1 -10
+```
+find the file modified in more than one day age and less than ten days ago
+```
+find . -type f -mtime +1 -10
+```
+
+find the file and it contents "s108321033"
+```
+find . -type f -exec grep "s108321033" {} +
+```
