@@ -99,3 +99,46 @@ Figure 3.21: Exposed station problem
 
 Figure 3.22: Use of handshaking in exposed station problem
 ![](https://i.imgur.com/ou6Oi1o.png)
+
+
+## 3.5 Connection Device
+
+### Repeaters (or hubs): 
+* 只傳 0 和 1。
+* A repeater forwards every bit; it has no filtering capability(Maintained and Discarded).
+
+Figure 3.41    Repeater or hub
+![](https://i.imgur.com/UmqLA7P.png)
+
+Figure 3.40    Connecting devices
+![](https://i.imgur.com/rjNN2V6.png)
+
+
+### Bridges (or two-layer switches): 
+* 判斷 MAC Address，建立Bridge Table 
+* A bridge has a table used in filtering decisions(Maintained and Discarded).
+* A bridge does not change the physical (MAC) addresses in a frame.
+* Loops in the system must be prevented.
+
+
+Figure 3.42    Bridge
+![](https://i.imgur.com/X5qkq9X.png)
+
+Figure 3.43    Learning bridge
+![](https://i.imgur.com/1rLxZiK.png)
+
+
+1. When station A sends a frame to station D,  the table does not have an entry for either D or A.Tthe frame goes from all three ports; the frame floods the network.(Broadcast)
+2. The learning process continues until the table has information about every port.
+
+* If there are a loops in the system; what would the sysdem do?
+    * convert graph into tree.
+ 
+ 
+### Routers
+* A router is a three-layer (physical, data link, and network) device.
+* A repeater or a bridge connects segments of a LAN.A router connects independent LANs or WANs to create an internetwork (internet).
+* A router changes the physical addresses in a packet.
+
+Figure 3.44    Routing example
+![](https://i.imgur.com/FqvGYP3.png)
