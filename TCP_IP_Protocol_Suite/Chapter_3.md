@@ -72,8 +72,9 @@ Figure 3.14: Extended service sets(ESSs)
 
 ### MAC Sublayer
 * CSMA/CA (carrier sense multiple access with collision avoidance)
+
 Figure 3.15: CSMA/CA flow diagram!
-[](https://i.imgur.com/YeK0JsW.png)
+
 
 Figure 3.16: CSMA/CA and NAV
 ![](https://i.imgur.com/eGb1sxJ.png)
@@ -86,9 +87,12 @@ Figure 3.16: CSMA/CA and NAV
 * ACK: acknowledgment(回函)
 
 ## Hidden station problem
+B 準備傳資料給 A ，B 傳 RTS ,A 向四周傳 CTS ，導致 C 要傳資料給 A 是不被允許，即使傳遞訊號不會影響 B 傳 A 的資料
+
 Figure 3.19: Hidden station problem
 ![](https://i.imgur.com/0v9u09h.png)
 
+**Note: The CTS frame in CSMA/CA handshake can prevent collision from a hidden station.**
 
 Figure 3.20: Use of handshaking to prevent hidden station problem
 ![](https://i.imgur.com/zJF64p4.png)
