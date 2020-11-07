@@ -34,9 +34,9 @@ ln [OPTION]... TARGET... DIRECTORY     (2nd form)
 The ln command is used to create links between files.
 
 ### Links Types
-- Hard links: You can think a hard link as an additional name for an existing file. Hard links are associating two or more file names with the same inode . You can create one or more hard links for a single file. Hard links cannot be created for directories and files on a different filesystem or partition.
+- Hard links: You can think a hard link as an additional name for an existing file. Hard links are associating two or more file names with the same inode . You can create one or more hard links for a single file. Hard links cannot be created for directories and files on a different filesystem or partition.The inode of two file will same.
 
-- Soft links(symbolic link): A soft link is something like a shortcut in Windows. It is an indirect pointer to a file or directory. Unlike a hard link, a symbolic link can point to a file or a directory on a different filesystem or partition
+- Soft links(symbolic link): A soft link is something like a shortcut in Windows. It is an indirect pointer to a file or directory. Unlike a hard link, a symbolic link can point to a file or a directory on a different filesystem or partition. The inode of two file will not same.
 
 
 ## df
