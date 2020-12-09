@@ -19,6 +19,20 @@ env
 ```
  ## regular expression
  
+ ## set
+ is used to define and determine the values of the system environment.
+ 
+```
+set
+```
+
+## env
+run a program in a modified environment
+```
+env
+```
+ 
+ 
  
  
  
